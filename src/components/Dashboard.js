@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { Tabs, Tab, AppBar} from '@material-ui/core'
 import Question from './Question'
+import { isQuestionVoted } from '../utils/helpers'
 
 function Dashboard (props) {
   const [selectedTab, setSelectedTab] = React.useState(0);
@@ -12,11 +13,6 @@ function Dashboard (props) {
   
   const {questionIds, questions, authedUser} = props
   
-  function isQuestionVoted (id, questions, authedUser) {
-    return questions[id].optionOne.votes.includes(authedUser)
-      || questions[id].optionTwo.votes.includes(authedUser)
-  }
-
   const answeredQuestionIds = questionIds.filter((id) => {
     return isQuestionVoted(id, questions, authedUser)
   })
@@ -24,7 +20,7 @@ function Dashboard (props) {
   const unansweredQuestionIds = questionIds.filter((id) => {
     return !isQuestionVoted(id, questions,authedUser)
   })
-  
+
   return (
     <div>
       <h3>Dashboard</h3>
