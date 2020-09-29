@@ -20,7 +20,10 @@ class Question extends React.Component {
         <img 
           src={avatar} 
           alt={`Avatar of ${name}`}
-        />
+        /> 
+        <h3>Would you rather</h3>
+        <p>{`...${optionOne.text}...`}</p>
+        <button>View Poll</button>
       </div>
     )
   }
