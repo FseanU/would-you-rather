@@ -4,7 +4,7 @@ import { formatQuestion } from '../utils/helpers'
 
 class Question extends React.Component {
   render() {
-    console.log(this.props)
+    // console.log(this.props)
     const { question } = this.props
     if (question === null) {
       return <p>This Question doesn't exist</p>
