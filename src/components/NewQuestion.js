@@ -40,7 +40,9 @@ class NewQuestion extends React.Component {
     /* todo: Redirect to / if submitted */
     return (
       <div>
-        <h3>Create New Question</h3>
+        <h2>Create New Question</h2>
+        <p>Complete the question:</p>
+        <h3>Would you rather...</h3>
         <form onSubmit={this.handleSubmit}>
           <textarea 
             name='optionOne'
@@ -49,6 +51,7 @@ class NewQuestion extends React.Component {
             onChange={this.handleInputChange}
             maxLength={200}
           />
+          <p>OR</p>
           <textarea 
             name="optionTwo"
             placeholder='Enter Option Two Text Here' 
