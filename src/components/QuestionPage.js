@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import AnswerQuestion from './AnswerQuestion'
 
 class QuestionPage extends React.Component {
   render() {
@@ -10,7 +11,7 @@ class QuestionPage extends React.Component {
             2. Show QuestionResult if authedUser answered the question  */}
         {answeredQuestionIds.includes(id)
           ? <p>QuestionResult</p>
-          : <p>AnswerQuestion</p> }
+          : <AnswerQuestion match={{params: {id: '8xf0y6ziyjabvozdd253nd'}}} /> }
       </div>
     )
   }
