@@ -47,9 +47,11 @@ export function answerQuestion ({ authedUser, qid, answer}) {
 export function handleAnswerQuestion (info) {
   return (dispatch) => {
     // authedUser, questionId, answer
-
+    dispatch(showLoading())
+    
     return  saveQuestionAnswer(info)
       .then(dispatch(answerQuestion(info)))
+      .then(dispatch(hideLoading()))
       .catch((e) => {
         console.warn('Error in handleAnswerQuestion: ', e)
         alert('There was an error submitting the answer. Try again.')
