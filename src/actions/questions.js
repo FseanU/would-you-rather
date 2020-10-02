@@ -1,8 +1,9 @@
-import { saveQuestion } from '../utils/api'
+import { saveQuestion, saveQuestionAnswer } from '../utils/api'
 import { showLoading, hideLoading } from 'react-redux-loading'
 
 export const RECEIVE_QUESTIONS = 'RECEIVE_QUESTIONS'
 export const ADD_QUESTION = 'ADD_QUESTION'
+export const ANSWER_QUESTION = 'ANSWER_QUESTION'
 
 function addQuestion (question) {
   return {
@@ -31,5 +32,27 @@ export function receiveQuestions (questions) {
   return {
     type: RECEIVE_QUESTIONS,
     questions,
+  }
+}
+
+export function answerQuestion ({ authedUser, qid, answer}) {
+  return {
+    type: ANSWER_QUESTION,
+    authedUser,
+    qid,
+    answer,
+  }
+}
+
+export function handleAnswerQuestion (info) {
+  return (dispatch) => {
+    // authedUser, questionId, answer
+
+    return  saveQuestionAnswer(info)
+      .then(dispatch(answerQuestion(info)))
+      .catch((e) => {
+        console.warn('Error in handleAnswerQuestion: ', e)
+        alert('There was an error submitting the answer. Try again.')
+      })
   }
 }

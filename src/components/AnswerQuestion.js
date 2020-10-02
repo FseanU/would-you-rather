@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { handleAnswerQuestion } from '../actions/questions'
 
 class AnswerQuestion extends React.Component {
   state = { }
@@ -14,13 +15,20 @@ class AnswerQuestion extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
-    const { option } = this.state
-    console.log(option)
+    const { answer } = this.state
+    console.log(answer)
+    const { dispatch, authedUser, qid } = this.props
+
+    dispatch(handleAnswerQuestion({
+      qid,
+      authedUser,
+      answer,
+    }))
   }
 
   render() {
     const { authedUser, id, question, author } = this.props
-    const { option } = this.state
+    const { answer } = this.state
     const optionOneText = question.optionOne.text
     const optionTwoText = question.optionTwo.text
     // todo: Redirect to QuestionResults
@@ -35,23 +43,23 @@ class AnswerQuestion extends React.Component {
           <h3>Would You Rather ...</h3>
           <input 
             type="radio" 
-            value={optionOneText} 
-            name='option'
+            value="optionOne" 
+            name='answer'
             onChange={this.handleChange}
           />
           {optionOneText}  
 
           <input 
             type="radio" 
-            value={optionTwoText} 
-            name='option'
+            value="optionTwo"
+            name='answer'
             onChange={this.handleChange}
           />
           {optionTwoText}  
           
           <button
             type='submit'
-            disabled={ option === undefined }>
+            disabled={ answer === undefined }>
             Submit
           </button>
         </form>
@@ -67,7 +75,7 @@ function mapStateToProps ({ questions, authedUser, users }, props) {
   return {
     question,
     authedUser,
-    id,
+    qid: id,
     author
   }
 }
