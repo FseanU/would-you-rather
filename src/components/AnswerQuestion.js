@@ -27,7 +27,7 @@ class AnswerQuestion extends React.Component {
   }
 
   render() {
-    const { authedUser, id, question, author } = this.props
+    const { question, author } = this.props
     const { answer } = this.state
     const optionOneText = question.optionOne.text
     const optionTwoText = question.optionTwo.text

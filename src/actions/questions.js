@@ -46,7 +46,6 @@ export function answerQuestion ({ authedUser, qid, answer}) {
 
 export function handleAnswerQuestion (info) {
   return (dispatch) => {
-    // authedUser, questionId, answer
     dispatch(showLoading())
     
     return  saveQuestionAnswer(info)

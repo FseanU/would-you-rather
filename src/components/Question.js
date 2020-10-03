@@ -4,14 +4,13 @@ import { formatQuestion } from '../utils/helpers'
 
 class Question extends React.Component {
   render() {
-    // console.log(this.props)
     const { question } = this.props
     if (question === null) {
       return <p>This Question doesn't exist</p>
     }
 
     const { 
-      name, avatar, hasVoted, optionOne
+      name, avatar, optionOne
     } = question
 
     return (
