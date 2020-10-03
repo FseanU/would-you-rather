@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import LoadingBar from 'react-redux-loading'
 import { handleInitialData } from '../actions/shared'
 import Dashboard from './Dashboard'
+import LeaderBoard from './LeaderBoard';
 import NewQuestion from './NewQuestion'
 import QuestionPage from './QuestionPage';
 
@@ -15,6 +16,7 @@ class App extends React.Component {
     return (
       <div>
         <LoadingBar />
+        <LeaderBoard />
         {this.props.loading === true 
           ? null 
           : <QuestionPage match={{params: {id: '8xf0y6ziyjabvozdd253nd'}}} />}
