@@ -34,21 +34,6 @@ function LeaderBoard(props) {
 }
 
 function mapStateToProps({ users }) {
-  // const usersWithScore = Object.keys(users).map((userId) => {
-  //   const user = users[userId]
-  //   const answeredQuestions = Object.keys(user.answers).length
-  //   const createdQuestions = user.questions.length
-  //   const score = answeredQuestions + createdQuestions
-  //   return ({
-  //     [userId]: {
-  //       ...user,
-  //       answeredQuestions,
-  //       createdQuestions,
-  //       score,
-  //     }
-  //   })
-  // })
-  
   let usersWithScore = {}
   for (let id in users) {
     const user = users[id]

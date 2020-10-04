@@ -16,10 +16,10 @@ class App extends React.Component {
     return (
       <div>
         <LoadingBar />
-        <LeaderBoard />
+        {/* <LeaderBoard /> */}
         {this.props.loading === true 
           ? null 
-          : <QuestionPage match={{params: {id: '8xf0y6ziyjabvozdd253nd'}}} />}
+          : <QuestionPage match={{params: {id: 'vthrdm985a262al8qx3do'}}} />}
         
       </div>
     );
