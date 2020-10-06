@@ -26,7 +26,7 @@ class QuestionResults extends React.Component {
 }
 
 function mapStateToProps({ questions, users }, props) {
-  const { id } = props.match.params
+  const { id } = props
   const question = questions[id]
   const author = users[question.author]
 

@@ -1,9 +1,12 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { Redirect } from 'react-router-dom'
 import { handleAnswerQuestion } from '../actions/questions'
 
 class AnswerQuestion extends React.Component {
-  state = { }
+  state = {
+    toQuestionResults: false,
+  }
 
   handleChange = (e) => {
     const { name, value } = e.target
@@ -24,14 +27,22 @@ class AnswerQuestion extends React.Component {
       authedUser,
       answer,
     }))
+
+    this.setState({
+      toQuestionResults: true,
+    })
   }
 
   render() {
     const { question, author } = this.props
-    const { answer } = this.state
+    const { answer, toQuestionResults } = this.state
     const optionOneText = question.optionOne.text
     const optionTwoText = question.optionTwo.text
-    // todo: Redirect to QuestionResults
+    
+    if (toQuestionResults) {
+      return <Redirect to='/question/:id' />
+    }
+
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
@@ -69,7 +80,7 @@ class AnswerQuestion extends React.Component {
 }
 
 function mapStateToProps ({ questions, authedUser, users }, props) {
-  const { id } = props.match.params
+  const { id } = props
   const question = questions[id]
   const author = users[question.author]
   return {

@@ -11,14 +11,15 @@ class QuestionPage extends React.Component {
         {/* 1. Show AnswerQuestion if authedUser haven't answered the question
             2. Show QuestionResult if authedUser answered the question  */}
         {answeredQuestionIds.includes(id)
-          ? <QuestionResults match={{params: {id: '8xf0y6ziyjabvozdd253nd'}}} />
-          : <AnswerQuestion match={{params: {id: '8xf0y6ziyjabvozdd253nd'}}} /> }
+          ? <QuestionResults id={id} />
+          : <AnswerQuestion id={id} /> }
       </div>
     )
   }
 }
 
 function mapStateToProps ({authedUser, users}, props) {
+  console.log(props)
   const { id } = props.match.params
   const answeredQuestions = users[authedUser].answers
   const answeredQuestionIds = Object.keys(answeredQuestions)
