@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { Redirect } from 'react-router-dom'
 import { setAuthedUser } from '../actions/authedUser'
 
 class SignIn extends React.Component {
@@ -18,8 +19,13 @@ class SignIn extends React.Component {
     const { dispatch } = this.props
     const userId = this.state.value
     e.preventDefault()
-    dispatch(setAuthedUser(userId))
-    // todo: redirect to dashboard
+    if (userId) {
+      dispatch(setAuthedUser(userId))
+    } 
+      
+    if (this.state) {
+      return <Redirect to='/' />
+    }
   }
 
   render() {
