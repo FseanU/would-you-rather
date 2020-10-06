@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { formatQuestion } from '../utils/helpers'
+import { Link } from 'react-router-dom'
 
 class Question extends React.Component {
   render() {
@@ -10,7 +11,7 @@ class Question extends React.Component {
     }
 
     const { 
-      name, avatar, optionOne
+      name, avatar, optionOne, id
     } = question
 
     return (
@@ -22,7 +23,7 @@ class Question extends React.Component {
         /> 
         <h3>Would you rather</h3>
         <p>{`...${optionOne.text}...`}</p>
-        <button>View Poll</button>
+        <Link to={`/question/${id}`}>View Poll</Link>
       </div>
     )
   }
