@@ -6,6 +6,7 @@ import Dashboard from './Dashboard'
 import LeaderBoard from './LeaderBoard';
 import NewQuestion from './NewQuestion'
 import QuestionPage from './QuestionPage';
+import SignIn from './SignIn'
 
 class App extends React.Component {
   componentDidMount() {
@@ -16,10 +17,10 @@ class App extends React.Component {
     return (
       <div>
         <LoadingBar />
-        {/* <LeaderBoard /> */}
+        
         {this.props.loading === true 
           ? null 
-          : <QuestionPage match={{params: {id: 'vthrdm985a262al8qx3do'}}} />}
+          : <SignIn />}
         
       </div>
     );
