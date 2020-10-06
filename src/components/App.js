@@ -14,13 +14,15 @@ class App extends React.Component {
   }
 
   render() {
+    console.log(this.props.loading)
     return (
       <div>
         <LoadingBar />
+        <SignIn />
         
         {this.props.loading === true 
           ? null 
-          : <SignIn />}
+          : <Dashboard />}
         
       </div>
     );

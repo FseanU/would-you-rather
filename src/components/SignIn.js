@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { setAuthedUser } from '../actions/authedUser'
 
 class SignIn extends React.Component {
   state = {
@@ -14,8 +15,11 @@ class SignIn extends React.Component {
   }
 
   handleSubmit = (e) => {
+    const { dispatch } = this.props
+    const userId = this.state.value
     e.preventDefault()
-    console.log('username: ', this.state.value)
+    dispatch(setAuthedUser(userId))
+    // todo: redirect to dashboard
   }
 
   render() {
