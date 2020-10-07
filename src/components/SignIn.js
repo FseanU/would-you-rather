@@ -18,18 +18,18 @@ class SignIn extends React.Component {
   handleSubmit = (e) => {
     const { dispatch } = this.props
     const userId = this.state.value
+    console.log("submit")
     e.preventDefault()
     if (userId) {
       dispatch(setAuthedUser(userId))
     } 
-      
-    if (this.state) {
-      return <Redirect to='/' />
-    }
   }
 
   render() {
-    const { users } = this.props
+    const { users, authedUser } = this.props
+    if (authedUser) {
+      return <Redirect to='/' />
+    }
     return (
       <div>
         <h2>Welcome to the Would You Rather App</h2>
@@ -53,9 +53,10 @@ class SignIn extends React.Component {
   }
 }
 
-function mapStateToProps({ users }) {
+function mapStateToProps({ users, authedUser }) {
   return {
     users,
+    authedUser,
   }
 }
 

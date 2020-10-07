@@ -11,17 +11,17 @@ export default function Nav () {
           </NavLink>
         </li>
         <li>
-          <NavLink to='/new' exact>
+          <NavLink to='/new'>
             New Question
           </NavLink>
         </li>
         <li>
-          <NavLink to='/leaderboard' exact>
+          <NavLink to='/leaderboard'>
             Leader Board
           </NavLink>
         </li>
         <li>
-          <NavLink to='/signin' exact>
+          <NavLink to='/logout'>
             Logout
           </NavLink>
         </li>
