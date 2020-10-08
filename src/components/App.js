@@ -20,22 +20,24 @@ class App extends React.Component {
     console.log(this.props)
     return (
       <Router>
-        <div>
+        <React.Fragment>
           <LoadingBar />
-          <Nav />
-          {this.props.authedUser ? console.log("already login")
-            : <Redirect to="/signin" />}
-          <Route path='/signin' component={SignIn} />
-          {this.props.loading === true 
-            ? null 
-            : <div>
-                <Route path='/' exact component={Dashboard} />
-                <Route path='/question/:id' component={QuestionPage} />
-                <Route path='/leaderboard' component={LeaderBoard} />
-                <Route path='/new' component={NewQuestion} />
-                <Route path='/logout' component={LogoutPage} />
-              </div>}
-        </div>
+          <div className='container'>
+            <Nav />
+            {this.props.authedUser ? console.log("already login")
+              : <Redirect to="/signin" />}
+            <Route path='/signin' component={SignIn} />
+            {this.props.loading === true 
+              ? null 
+              : <div>
+                  <Route path='/' exact component={Dashboard} />
+                  <Route path='/question/:id' component={QuestionPage} />
+                  <Route path='/leaderboard' component={LeaderBoard} />
+                  <Route path='/new' component={NewQuestion} />
+                  <Route path='/logout' component={LogoutPage} />
+                </div>}
+          </div>
+        </React.Fragment>
       </Router>
     );
   }
