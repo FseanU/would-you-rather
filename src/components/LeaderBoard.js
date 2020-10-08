@@ -1,6 +1,5 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { answerQuestion } from '../actions/questions'
 
 function LeaderBoard(props) {
   const { usersWithScore } = props

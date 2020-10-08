@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { Tabs, Tab, AppBar} from '@material-ui/core'
+import { Tabs, Tab } from '@material-ui/core'
 import Question from './Question'
 import { isQuestionVoted } from '../utils/helpers'
 
