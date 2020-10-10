@@ -8,11 +8,12 @@ class QuestionResults extends React.Component {
     const optionTwoVotes = question.optionTwo.votes.length
     const totalVotes = optionOneVotes + optionTwoVotes
     const vote = totalVotes > 1 ? "votes" : "vote"
-    
+    const avatar = author.avatarURL
+    console.log(author)
     return (
       <div>
         <h3>{`Asked by ${author.name}`}</h3>
-        <img src={author.avatarURL} alt={`Avatar of ${author.name}`} />
+        <img src={require(`../${avatar}`)} alt={`Avatar of ${author.name}`} />
         <h1>
           Results :
         </h1>

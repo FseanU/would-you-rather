@@ -8,11 +8,11 @@ function LeaderBoard(props) {
       <h1>LeaderBoard</h1>
       {Object.keys(usersWithScore).map((userId) => {
         const user = usersWithScore[userId]
-
+        const avatar = user.avatarURL
         return (
           <div key={userId}>
             <img 
-              src={user.avatarURL} 
+              src={require(`../${avatar}`)} 
               alt={`Avatar of ${user.name}`} 
             />
             <p>{user.name}</p>

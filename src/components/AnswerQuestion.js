@@ -38,7 +38,8 @@ class AnswerQuestion extends React.Component {
     const { answer, toQuestionResults } = this.state
     const optionOneText = question.optionOne.text
     const optionTwoText = question.optionTwo.text
-    
+    const avatar = author.avatarURL
+
     if (toQuestionResults) {
       return <Redirect to='/question/:id' />
     }
@@ -48,7 +49,7 @@ class AnswerQuestion extends React.Component {
         <form onSubmit={this.handleSubmit}>
           <p>{author.name} asks:</p>
           <img 
-          src={author.avatarURL} 
+          src={require(`../${avatar}`)}
           alt={`Avatar of ${author.name}`}
           /> 
           <h3>Would You Rather ...</h3>

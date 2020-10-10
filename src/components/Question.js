@@ -11,14 +11,17 @@ class Question extends React.Component {
     }
 
     const { 
-      name, avatar, optionOne, id
+      name, optionOne, id
     } = question
+
+    const avatar = question.avatar
 
     return (
       <div>
         <h3>{`${name} ask:`}</h3>
         <img 
-          src={avatar} 
+          src={require(`../${avatar}`)} 
+          // src={require('../images/avatar1.png')} 
           alt={`Avatar of ${name}`}
         /> 
         <h3>Would you rather</h3>
