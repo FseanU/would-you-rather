@@ -9,7 +9,7 @@ class QuestionResults extends React.Component {
     const totalVotes = optionOneVotes + optionTwoVotes
     const vote = totalVotes > 1 ? "votes" : "vote"
     const avatar = author.avatarURL
-    console.log(author)
+
     return (
       <div>
         <h3>{`Asked by ${author.name}`}</h3>

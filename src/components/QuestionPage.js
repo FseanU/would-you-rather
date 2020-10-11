@@ -5,12 +5,13 @@ import QuestionResults from './QuestionResults'
 
 class QuestionPage extends React.Component {
   render() {
-    const { answeredQuestionIds, id } = this.props 
+    const { id, optionOneVotedArr, optionTwoVotedArr, authedUser } = this.props 
+
     return (
       <div>
         {/* 1. Show AnswerQuestion if authedUser haven't answered the question
             2. Show QuestionResult if authedUser answered the question  */}
-        {answeredQuestionIds.includes(id)
+        {optionOneVotedArr.includes(authedUser) || optionTwoVotedArr.includes(authedUser)
           ? <QuestionResults id={id} />
           : <AnswerQuestion id={id} /> }
       </div>
@@ -18,15 +19,16 @@ class QuestionPage extends React.Component {
   }
 }
 
-function mapStateToProps ({authedUser, users}, props) {
-  console.log(props)
+function mapStateToProps ({authedUser, users, questions}, props) {
   const { id } = props.match.params
-  const answeredQuestions = users[authedUser].answers
-  const answeredQuestionIds = Object.keys(answeredQuestions)
+  const optionOneVotedArr = questions[id].optionOne.votes
+  const optionTwoVotedArr = questions[id].optionTwo.votes
+  
   return {
     id,
     authedUser,
-    answeredQuestionIds,
+    optionOneVotedArr,
+    optionTwoVotedArr,
   }
 }
 
