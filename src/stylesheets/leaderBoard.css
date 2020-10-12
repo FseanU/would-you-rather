@@ -1,0 +1,44 @@
+.card {
+  background-color: #f7836d;
+  width: 220px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-container {
+  display: flex;
+}
+
+.card p {
+  color: #e0e0e0;
+  text-align: center;
+  font-weight: 300;
+}
+
+.card h1 {
+  color: white;
+  align-self: center;
+  font-size: 48px;
+}
+
+.card h2 {
+  color: white;
+  align-self: center;
+  font-weight: 300;
+}
+
+.card img {
+  object-fit: contain;
+}
+
+.text-card {
+  display: flex;
+  justify-content: space-between;
+}
+
+.line-bottom-white {
+  border-bottom: solid 0.06rem white;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}

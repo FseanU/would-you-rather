@@ -5,29 +5,32 @@ function LeaderBoard(props) {
   const { usersWithScore } = props
   return (
     <div>
-      <h1>LeaderBoard</h1>
-      {Object.keys(usersWithScore).map((userId) => {
-        const user = usersWithScore[userId]
-        const avatar = user.avatarURL
-        return (
-          <div key={userId}>
-            <img 
-              src={require(`../${avatar}`)} 
-              alt={`Avatar of ${user.name}`} 
-            />
-            <p>{user.name}</p>
-            <div>
-              <p>Answered questions</p>
-              <p>{user.answeredQuestions}</p>
+      {/* <h1>LeaderBoard</h1> */}
+      <div className="card-container mt-64">
+        {Object.keys(usersWithScore).map((userId) => {
+          const user = usersWithScore[userId]
+          const avatar = user.avatarURL
+          return (
+            <div className='card m-8 p-16' key={userId}>
+              <img 
+                src={require(`../${avatar}`)} 
+                alt={`Avatar of ${user.name}`} 
+              />
+              <h2 className="mt-8">{user.name}</h2>
+              <h1 className="mt-16">{user.score}</h1>
+              <div className="line-bottom-white"></div>
+              <div className='text-card mb-8'>
+                <p>Answered questions</p>
+                <p>{user.answeredQuestions}</p>
+              </div>
+              <div className='text-card mb-8'>
+                <p>Created questions</p>
+                <p>{user.createdQuestions}</p>
+              </div>
             </div>
-            <div>
-              <p>Created questions</p>
-              <p>{user.createdQuestions}</p>
-            </div>
-            <p>Score: {user.score}</p>
-          </div>
-        )
-      })}
+          )
+        })}
+      </div>
     </div>
   )
 }

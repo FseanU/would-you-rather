@@ -1,14 +1,50 @@
-/* Regular Weight */
+/* Black Weight */
 @font-face {
   font-family: "Nunito";
-  src: local("Nunito"), url(./fonts/Nunito-Regular.ttf) format("truetype");
+  src: local("Nunito"), url(./fonts/Nunito-Black.ttf) format("truetype");
+  font-weight: 700;
+}
+
+/* ExtraBold Weight */
+@font-face {
+  font-family: "Nunito";
+  src: local("Nunito"), url(./fonts/Nunito-ExtraBold.ttf) format("truetype");
+  font-weight: 700;
+}
+
+/* Bold Weight */
+@font-face {
+  font-family: "Nunito";
+  src: local("Nunito"), url(./fonts/Nunito-Bold.ttf) format("truetype");
+  font-weight: 600;
 }
 
 /* SemiBold Weight */
 @font-face {
   font-family: "Nunito";
   src: local("Nunito"), url(./fonts/Nunito-SemiBold.ttf) format("truetype");
-  font-weight: 600;
+  font-weight: 500;
+}
+
+/* Regular Weight */
+@font-face {
+  font-family: "Nunito";
+  src: local("Nunito"), url(./fonts/Nunito-Regular.ttf) format("truetype");
+  font-weight: 400;
+}
+
+/* light Weight */
+@font-face {
+  font-family: "Nunito";
+  src: local("Nunito"), url(./fonts/Nunito-Light.ttf) format("truetype");
+  font-weight: 300;
+}
+
+/* ExtraLight Weight */
+@font-face {
+  font-family: "Nunito";
+  src: local("Nunito"), url(./fonts/Nunito-ExtraLight.ttf) format("truetype");
+  font-weight: 200;
 }
 
 body {
@@ -23,6 +59,120 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+.m-8 {
+  margin: 8pt;
+}
+.mt-8 {
+  margin-top: 8pt;
+}
+.mr-8 {
+  margin-right: 8pt;
+}
+.mb-8 {
+  margin-bottom: 8pt;
+}
+.ml-8 {
+  margin-left: 8pt;
+}
+
+.m-16 {
+  margin: 16pt;
+}
+.mt-16 {
+  margin-top: 16pt;
+}
+.mr-16 {
+  margin-right: 16pt;
+}
+.mb-16 {
+  margin-bottom: 16pt;
+}
+.ml-16 {
+  margin-left: 16pt;
+}
+
+.m-32 {
+  margin: 32pt;
+}
+.mt-32 {
+  margin-top: 32pt;
+}
+.mr-32 {
+  margin-right: 32pt;
+}
+.mb-32 {
+  margin-bottom: 32pt;
+}
+.ml-32 {
+  margin-left: 32pt;
+}
+
+.m-64 {
+  margin: 64pt;
+}
+.mt-64 {
+  margin-top: 64pt;
+}
+.mr-64 {
+  margin-right: 64pt;
+}
+.mb-64 {
+  margin-bottom: 64pt;
+}
+.ml-64 {
+  margin-left: 64pt;
+}
+
+.p-8 {
+  padding: 8pt;
+}
+
+.pt-8 {
+  padding-top: 8pt;
+}
+
+.pr-8 {
+  padding-right: 8pt;
+}
+
+.pb-8 {
+  padding-bottom: 8pt;
+}
+
+.pl-8 {
+  padding-left: 8pt;
+}
+
+.p-16 {
+  padding: 16pt;
+}
+
+.pt-16 {
+  padding-top: 16pt;
+}
+
+.pr-16 {
+  padding-right: 16pt;
+}
+
+.pb-16 {
+  padding-bottom: 16pt;
+}
+
+.pl-16 {
+  padding-left: 16pt;
 }
 
 .container {
