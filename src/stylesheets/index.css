@@ -1,6 +1,7 @@
 @import "font.css";
 @import "spacing.css";
 @import "leaderBoard.css";
+@import "newQuestion.css";
 
 body {
   margin: 0;
@@ -24,6 +25,7 @@ h5,
 h6,
 p {
   margin: 0;
+  color: #282828;
 }
 
 .container {
