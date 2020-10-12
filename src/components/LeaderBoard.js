@@ -5,13 +5,14 @@ function LeaderBoard(props) {
   const { usersWithScore } = props
   return (
     <div>
-      {/* <h1>LeaderBoard</h1> */}
-      <div className="card-container mt-64">
+        <h1 className="mt-56 leaderBoard">Leader Board</h1>
+        <div className="line-bottom-black"></div>
+      <div className="card-container mt-48">
         {Object.keys(usersWithScore).map((userId) => {
           const user = usersWithScore[userId]
           const avatar = user.avatarURL
           return (
-            <div className='card m-8 p-16' key={userId}>
+            <div className='card p-16' key={userId}>
               <img 
                 src={require(`../${avatar}`)} 
                 alt={`Avatar of ${user.name}`} 

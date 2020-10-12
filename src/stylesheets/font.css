@@ -1,0 +1,48 @@
+/* Black Weight */
+@font-face {
+  font-family: "Nunito";
+  src: local("Nunito"), url(../fonts/Nunito-Black.ttf) format("truetype");
+  font-weight: 700;
+}
+
+/* ExtraBold Weight */
+@font-face {
+  font-family: "Nunito";
+  src: local("Nunito"), url(../fonts/Nunito-ExtraBold.ttf) format("truetype");
+  font-weight: 700;
+}
+
+/* Bold Weight */
+@font-face {
+  font-family: "Nunito";
+  src: local("Nunito"), url(../fonts/Nunito-Bold.ttf) format("truetype");
+  font-weight: 600;
+}
+
+/* SemiBold Weight */
+@font-face {
+  font-family: "Nunito";
+  src: local("Nunito"), url(../fonts/Nunito-SemiBold.ttf) format("truetype");
+  font-weight: 500;
+}
+
+/* Regular Weight */
+@font-face {
+  font-family: "Nunito";
+  src: local("Nunito"), url(../fonts/Nunito-Regular.ttf) format("truetype");
+  font-weight: 400;
+}
+
+/* light Weight */
+@font-face {
+  font-family: "Nunito";
+  src: local("Nunito"), url(../fonts/Nunito-Light.ttf) format("truetype");
+  font-weight: 300;
+}
+
+/* ExtraLight Weight */
+@font-face {
+  font-family: "Nunito";
+  src: local("Nunito"), url(../fonts/Nunito-ExtraLight.ttf) format("truetype");
+  font-weight: 200;
+}

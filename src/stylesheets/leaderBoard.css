@@ -1,13 +1,15 @@
 .card {
   background-color: #f7836d;
-  width: 220px;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
+  justify-self: stretch;
 }
 
 .card-container {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 16pt;
 }
 
 .card p {
@@ -41,4 +43,13 @@
   border-bottom: solid 0.06rem white;
   margin-top: 20px;
   margin-bottom: 20px;
+}
+
+.line-bottom-black {
+  border-bottom: solid 0.06rem #9e9e9e;
+}
+
+.leaderBoard {
+  font-weight: 300;
+  color: #747474;
 }
