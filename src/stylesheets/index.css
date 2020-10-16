@@ -1,5 +1,6 @@
 @import "font.css";
 @import "spacing.css";
+@import "color.css";
 @import "leaderBoard.css";
 @import "newQuestion.css";
 
@@ -10,7 +11,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #282828;
+  color: var(--black);
 }
 
 code {
@@ -26,7 +27,7 @@ h5,
 h6,
 p {
   margin: 0;
-  color: #282828;
+  color: var(--black);
 }
 
 .container {
