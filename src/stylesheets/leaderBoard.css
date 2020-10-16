@@ -1,15 +1,15 @@
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 16px;
+  min-width: 200px;
+}
+
 .card {
   background-color: #f7836d;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
-  justify-self: stretch;
-}
-
-.card-container {
-  display: grid;
-  /* grid-template-columns: 1fr; */
-  column-gap: 16pt;
 }
 
 .card p {
