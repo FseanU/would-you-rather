@@ -44,7 +44,7 @@ class NewQuestion extends React.Component {
       <div className="form-container mt-56">
         <h1>Create New Question</h1>
         {/* <p>Complete the question:</p> */}
-        <h3 className="mt-16">Would you rather...</h3>
+        <h3 className="mt-48">Would you rather...</h3>
         <form className="mt-24" 
               onSubmit={this.handleSubmit}>
           <textarea 
