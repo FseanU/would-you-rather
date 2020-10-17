@@ -31,23 +31,31 @@ class SignIn extends React.Component {
       return <Redirect to='/' />
     }
     return (
-      <div>
-        <h2>Welcome to the Would You Rather App</h2>
-        <p>Please sign in to continue</p>
-        <h1>Sign in</h1>
-
-        <form onSubmit={this.handleSubmit}>
-          <select value={this.state.value} onChange={this.handleChange}>
-            {Object.keys(users).map((id) => (
-              <option key={id} value={id}>
-                {users[id].name}
-              </option>
-            ))}
-          </select>
-          <button type='submit'>
-            Sign In
-          </button>
-        </form>
+      <div className="sign-in-container mt-56">
+        <img 
+          src={require(`../images/login_illustration.png`)} 
+          alt="login illustration"/>
+        <div className="sign-in">
+          <h1>Sign in <br />to play</h1>
+          <form onSubmit={this.handleSubmit}>
+            <select 
+              value={this.state.value} 
+              onChange={this.handleChange}
+              className="mt-32 p-8"
+            >
+              {Object.keys(users).map((id) => (
+                <option key={id} value={id}>
+                  {users[id].name}
+                </option>
+              ))}
+            </select>
+            <button 
+              type='submit'
+              className="mt-16">
+              Sign In
+            </button>
+          </form>
+        </div>
       </div>
     )
   }

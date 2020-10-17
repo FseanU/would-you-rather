@@ -3,6 +3,7 @@
 @import "color.css";
 @import "leaderBoard.css";
 @import "newQuestion.css";
+@import "signIn.css";
 
 body {
   margin: 0;
@@ -56,4 +57,20 @@ a {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
+}
+
+button {
+  color: white;
+  background-color: var(--main-color);
+  border-radius: 25px;
+  border: none;
+  padding: 12pt;
+  font-family: "Nunito";
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+button:hover {
+  background-color: var(--hover-color);
 }
