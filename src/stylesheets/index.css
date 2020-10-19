@@ -4,6 +4,8 @@
 @import "leaderBoard.css";
 @import "newQuestion.css";
 @import "signIn.css";
+@import "question.css";
+@import "dashboard.css";
 
 body {
   margin: 0;
@@ -42,11 +44,16 @@ ul {
 }
 
 li {
+  list-style-type: none;
+}
+
+nav li {
   padding: 0.8rem;
   padding-left: 2rem;
   font-family: Nunito;
   font-weight: 600;
   font-size: 20px;
+  list-style-type: none;
 }
 
 a {

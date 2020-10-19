@@ -5,7 +5,7 @@ function LeaderBoard(props) {
   const { usersWithScore } = props
   return (
     <div>
-        <h1 className="mt-56 leaderBoard">Leader Board</h1>
+        <h1 className="mt-72 leaderBoard">Leader Board</h1>
         <div className="line-bottom-black"></div>
       <div className="card-container mt-48">
         {Object.keys(usersWithScore).map((userId) => {

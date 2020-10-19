@@ -128,6 +128,22 @@
   margin-left: 64pt;
 }
 
+.m-72 {
+  margin: 72pt;
+}
+.mt-72 {
+  margin-top: 72pt;
+}
+.mr-72 {
+  margin-right: 72pt;
+}
+.mb-72 {
+  margin-bottom: 72pt;
+}
+.ml-72 {
+  margin-left: 72pt;
+}
+
 /* padding */
 
 .p-8 {

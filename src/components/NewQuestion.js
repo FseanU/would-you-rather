@@ -41,7 +41,7 @@ class NewQuestion extends React.Component {
     }
 
     return (
-      <div className="form-container mt-56">
+      <div className="form-container mt-72">
         <h1>Create New Question</h1>
         {/* <p>Complete the question:</p> */}
         <h3 className="mt-48">Would you rather...</h3>

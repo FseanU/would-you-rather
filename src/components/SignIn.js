@@ -31,7 +31,7 @@ class SignIn extends React.Component {
       return <Redirect to='/' />
     }
     return (
-      <div className="sign-in-container mt-56">
+      <div className="sign-in-container mt-72">
         <img 
           src={require(`../images/login_illustration.png`)} 
           alt="login illustration"/>
