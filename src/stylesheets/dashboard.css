@@ -1,0 +1,14 @@
+.dashboard button:hover {
+  background-color: transparent;
+  color: var(--hover-color);
+}
+
+.dashboard li {
+  padding-top: 0.8rem;
+}
+
+.dashboard-cards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
