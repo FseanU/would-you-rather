@@ -24,7 +24,7 @@ class Question extends React.Component {
             // src={require('../images/avatar1.png')} 
             alt={`Avatar of ${name}`}
           /> 
-          <div>
+          <div className="ml-8">
             <h2>Would you rather</h2>
             <p className="author">{`Asked by ${name}`}</p>
             <div className="line-bottom-black mt-8 mb-16"></div>

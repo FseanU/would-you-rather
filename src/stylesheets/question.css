@@ -1,6 +1,6 @@
 .question-card {
   border: var(--grey) solid 1.5px;
-  max-width: 400px;
+  max-width: 480px;
   border-radius: 10px;
   padding-bottom: 8pt;
 }
@@ -33,6 +33,7 @@
 .card-info p {
   font-style: italic;
   font-weight: 400;
+  font-size: 14pt;
 }
 
 .question-card-btn {
