@@ -7,6 +7,7 @@
 @import "question.css";
 @import "dashboard.css";
 @import "questionResult.css";
+@import "answerQuestion.css";
 
 body {
   margin: 0;

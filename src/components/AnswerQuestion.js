@@ -32,8 +32,8 @@ class AnswerQuestion extends React.Component {
       toQuestionResults: true,
     })
   }
-
   render() {
+    console.log(this.state.answer);
     const { question, author } = this.props
     const { answer, toQuestionResults } = this.state
     const optionOneText = question.optionOne.text
@@ -45,35 +45,56 @@ class AnswerQuestion extends React.Component {
     }
 
     return (
-      <div>
+      <div className="mt-72 answer-question">
         <form onSubmit={this.handleSubmit}>
-          <p>{author.name} asks:</p>
-          <img 
-          src={require(`../${avatar}`)}
-          alt={`Avatar of ${author.name}`}
-          /> 
-          <h3>Would You Rather ...</h3>
-          <input 
-            type="radio" 
-            value="optionOne" 
-            name='answer'
-            onChange={this.handleChange}
-          />
-          {optionOneText}  
-
-          <input 
-            type="radio" 
-            value="optionTwo"
-            name='answer'
-            onChange={this.handleChange}
-          />
-          {optionTwoText}  
+          <div className="author-info">
+            <img 
+            src={require(`../${avatar}`)}
+            alt={`Avatar of ${author.name}`}
+            /> 
+            <div className="ml-16">
+              <p>{author.name} asks:</p>
+              <h1>Would You Rather ...</h1>
+            </div>
+          </div>
+          <div className="options mt-64">
+            <input 
+              type="radio" 
+              value="optionOne" 
+              name='answer'
+              onChange={this.handleChange}
+              id="optionOne"
+            />
+            <label 
+              htmlFor="optionOne" 
+              className="option1"
+              id={this.state.answer === "optionOne" ? "selected" : "unselected"}
+            >
+              {optionOneText}  
+            </label>
           
-          <button
-            type='submit'
-            disabled={ answer === undefined }>
-            Submit
-          </button>
+            <input 
+              type="radio" 
+              value="optionTwo"
+              name='answer'
+              onChange={this.handleChange}
+              id="optionTwo"
+            />
+            <label 
+              htmlFor="optionTwo" 
+              className="option2"
+              id={this.state.answer === "optionTwo" ? "selected" : "unselected"}
+            >
+              {optionTwoText}  
+            </label>  
+          </div>
+          <div className="answer-question-btn mt-56">
+            <button
+              type='submit'
+              disabled={ answer === undefined }>
+              Submit
+            </button>
+          </div>
         </form>
       </div>
     )
