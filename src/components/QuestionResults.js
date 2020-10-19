@@ -11,16 +11,28 @@ class QuestionResults extends React.Component {
     const avatar = author.avatarURL
 
     return (
-      <div>
-        <h3>{`Asked by ${author.name}`}</h3>
-        <img src={require(`../${avatar}`)} alt={`Avatar of ${author.name}`} />
-        <h1>
-          Results :
-        </h1>
-        <h3>{`Would you rather ${question.optionOne.text}?`}</h3>
-        <p>{`${optionOneVotes} out of ${totalVotes} ${vote}`}</p>
-        <h3>{`Would you rather ${question.optionTwo.text}?`}</h3>
-        <p>{`${optionTwoVotes} out of ${totalVotes} ${vote}`}</p>
+      <div className="question-result mt-72"> 
+        <div className="question-result-info">
+          <h1>Results</h1>
+          <div>
+            <p className="mr-8">{`Asked by ${author.name}`}</p>
+            <img 
+              src={require(`../${avatar}`)} 
+              alt={`Avatar of ${author.name}`} />
+          </div>
+        </div>
+        <div className="mt-8 line-bottom-black"></div>
+        <h1 className="mt-48">Would you rather</h1>
+        <div className="options mt-32">
+          <div className="option1">
+            <h3>{`${question.optionOne.text}?`}</h3>
+            <p>{`${optionOneVotes} out of ${totalVotes} ${vote}`}</p>
+          </div>
+          <div className="option2">
+            <h3>{`${question.optionTwo.text}?`}</h3>
+            <p>{`${optionTwoVotes} out of ${totalVotes} ${vote}`}</p>
+          </div>
+        </div>
       </div>
     )
   }

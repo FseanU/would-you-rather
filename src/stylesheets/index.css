@@ -6,6 +6,7 @@
 @import "signIn.css";
 @import "question.css";
 @import "dashboard.css";
+@import "questionResult.css";
 
 body {
   margin: 0;
