@@ -17,16 +17,23 @@ class Question extends React.Component {
     const avatar = question.avatar
 
     return (
-      <div>
-        <h3>{`${name} ask:`}</h3>
-        <img 
-          src={require(`../${avatar}`)} 
-          // src={require('../images/avatar1.png')} 
-          alt={`Avatar of ${name}`}
-        /> 
-        <h3>Would you rather</h3>
-        <p>{`...${optionOne.text}...`}</p>
-        <Link to={`/question/${id}`}>View Poll</Link>
+      <div className="question-card p-16">
+        <div className="card-info">
+          <img 
+            src={require(`../${avatar}`)} 
+            // src={require('../images/avatar1.png')} 
+            alt={`Avatar of ${name}`}
+          /> 
+          <div>
+            <h2>Would you rather</h2>
+            <p className="author">{`Asked by ${name}`}</p>
+            <div className="line-bottom-black mt-8 mb-16"></div>
+            <p>{`...${optionOne.text}...`}</p>
+          </div>
+        </div>
+        <div className="question-card-btn mt-16">
+          <Link to={`/question/${id}`}>View Poll</Link>
+        </div>
       </div>
     )
   }

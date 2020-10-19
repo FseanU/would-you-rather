@@ -1,0 +1,53 @@
+.question-card {
+  border: var(--grey) solid 1.5px;
+  max-width: 400px;
+  border-radius: 10px;
+  padding-bottom: 8pt;
+}
+
+.card-info {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.card-info div {
+  grid-column: 2 / 4;
+}
+
+.card-info img {
+  grid-column: 1 / 2;
+  justify-self: center;
+}
+
+.card-info h2 {
+  font-weight: 400;
+}
+
+.card-info .author {
+  font-weight: 200;
+  font-size: 12pt;
+  font-style: normal;
+}
+
+.card-info p {
+  font-style: italic;
+  font-weight: 400;
+}
+
+.question-card-btn {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.question-card-btn a {
+  grid-column: 1 / 2;
+  justify-self: center;
+  color: var(--main-color);
+  transition: color 0.5s ease-in-out;
+}
+
+.question-card-btn a:hover {
+  color: var(--hover-color);
+}
