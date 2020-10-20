@@ -2,17 +2,18 @@ import React from 'react'
 import { connect } from 'react-redux'
 
 function LeaderBoard(props) {
-  const { usersWithScore } = props
+  const { usersSortedByScore } = props
+  // console.log(usersWithScore);
+  console.log("usersSortedByScore", usersSortedByScore);
   return (
     <div>
         <h1 className="mt-72 leaderBoard">Leader Board</h1>
         <div className="line-bottom-black"></div>
       <div className="card-container mt-48">
-        {Object.keys(usersWithScore).map((userId) => {
-          const user = usersWithScore[userId]
+        {usersSortedByScore.map((user) => {
           const avatar = user.avatarURL
           return (
-            <div className='card p-16' key={userId}>
+            <div className='card p-16' key={user.Id}>
               <img 
                 src={require(`../${avatar}`)} 
                 alt={`Avatar of ${user.name}`} 
@@ -37,25 +38,26 @@ function LeaderBoard(props) {
 }
 
 function mapStateToProps({ users }) {
-  let usersWithScore = {}
+  let usersWithScore = []
   for (let id in users) {
     const user = users[id]
     const answeredQuestions = Object.keys(user.answers).length
     const createdQuestions = user.questions.length
     const score = answeredQuestions + createdQuestions
-    const source = {
-      [id]: {
-        ...user,
-        answeredQuestions,
-        createdQuestions,
-        score,
-      }
+    const userObject = {
+      ...user,
+      answeredQuestions,
+      createdQuestions,
+      score,
     }
-    Object.assign(usersWithScore, source)
+    usersWithScore.push(userObject)
   }
-  
+  const usersSortedByScore = usersWithScore.sort(function(a, b) {
+    return b.score - a.score;
+  }) 
+
   return {
-    usersWithScore,
+    usersSortedByScore,
   }
 }
 
