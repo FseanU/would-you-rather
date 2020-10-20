@@ -1,31 +1,50 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import { connect } from 'react-redux'
 
-export default function Nav () {
+function Nav (props) {
+  const { user } = props;
+  const avatar = user ? user.avatarURL : ''; 
+  
   return (
     <nav className="nav">
-      <ul>
-        <li>
-          <NavLink to='/' exact>
-            Home
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to='/new'>
-            New Question
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to='/leaderboard'>
-            Leader Board
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to='/logout'>
-            Logout
-          </NavLink>
-        </li>
-      </ul>
+      {user 
+      ? (<ul>
+          <li>
+            <NavLink to='/' exact>
+              Home
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to='/new'>
+              New Question
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to='/leaderboard'>
+              Leader Board
+            </NavLink>
+          </li>
+          <li>
+            <img src={require(`../${avatar}`)} alt=""/>
+          </li>
+          <li>
+            <NavLink to='/logout'>
+              Logout
+            </NavLink>
+          </li>
+        </ul>)
+      : ''
+      }
     </nav>
   )
 }
+
+function mapStateToProps({authedUser, users}) {
+  const user = users[authedUser]
+  return {
+    user,
+  }
+}
+
+export default connect(mapStateToProps)(Nav)

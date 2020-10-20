@@ -3,8 +3,7 @@ import { connect } from 'react-redux'
 
 function LeaderBoard(props) {
   const { usersSortedByScore } = props
-  // console.log(usersWithScore);
-  console.log("usersSortedByScore", usersSortedByScore);
+
   return (
     <div>
         <h1 className="mt-72 leaderBoard">Leader Board</h1>
@@ -38,26 +37,12 @@ function LeaderBoard(props) {
 }
 
 function mapStateToProps({ users }) {
-  // let usersWithScore = []
-  // for (let id in users) {
-  //   const user = users[id]
-  //   const answeredQuestions = Object.keys(user.answers).length
-  //   const createdQuestions = user.questions.length
-  //   const score = answeredQuestions + createdQuestions
-  //   const userObject = {
-  //     ...user,
-  //     answeredQuestions,
-  //     createdQuestions,
-  //     score,
-  //   }
-  //   usersWithScore.push(userObject)
-  // }
   const usersWithScore = Object.keys(users).map((id) => {
     const user = users[id];
     const answeredQuestions = Object.keys(user.answers).length;
     const createdQuestions = user.questions.length;
     const score = answeredQuestions + createdQuestions;
-    console.log(user);
+    
     return {
       ...user,
       answeredQuestions,
@@ -65,6 +50,7 @@ function mapStateToProps({ users }) {
       score
     };
   })
+  
   const usersSortedByScore = usersWithScore.sort(function(a, b) {
     return b.score - a.score;
   }) 
