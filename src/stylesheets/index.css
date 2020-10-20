@@ -50,23 +50,8 @@ li {
   list-style-type: none;
 }
 
-nav li {
-  padding: 0.8rem;
-  padding-left: 2rem;
-  font-family: Nunito;
-  font-weight: 600;
-  font-size: 20px;
-  list-style-type: none;
-}
-
 a {
   text-decoration: none;
-}
-
-.nav ul {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
 }
 
 button {

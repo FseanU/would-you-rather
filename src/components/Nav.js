@@ -8,33 +8,33 @@ function Nav (props) {
   
   return (
     <nav className="nav">
-      {user 
-      ? (<ul>
-          <li>
-            <NavLink to='/' exact>
-              Home
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to='/new'>
-              New Question
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to='/leaderboard'>
-              Leader Board
-            </NavLink>
-          </li>
-          <li>
-            <img src={require(`../${avatar}`)} alt=""/>
-          </li>
-          <li>
-            <NavLink to='/logout'>
-              Logout
-            </NavLink>
-          </li>
-        </ul>)
-      : ''
+      {user ? 
+        (<ul>
+            <li>
+              <NavLink to='/' exact>
+                Home
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to='/new'>
+                New Question
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to='/leaderboard'>
+                Leader Board
+              </NavLink>
+            </li>
+            <li>
+              <img src={require(`../${avatar}`)} alt="Your avatar"/>
+            </li>
+            <li>
+              <NavLink to='/logout'>
+                Logout
+              </NavLink>
+            </li>
+          </ul>)
+        : ''
       }
     </nav>
   )

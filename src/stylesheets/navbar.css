@@ -1,3 +1,29 @@
+.nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.nav li {
+  padding: 0.8rem;
+  padding-left: 2rem;
+  font-family: Nunito;
+  font-weight: 400;
+  font-size: 20px;
+}
+
+.nav a {
+  color: var(--black);
+  transition: color 0.2s ease-in-out;
+}
+
+.nav a:hover {
+  color: var(--hover-color);
+}
+
 .nav img {
   max-width: 32px;
+  border: 2px solid var(--main-color);
+  border-radius: 20px;
 }
