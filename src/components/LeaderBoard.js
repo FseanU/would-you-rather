@@ -38,20 +38,33 @@ function LeaderBoard(props) {
 }
 
 function mapStateToProps({ users }) {
-  let usersWithScore = []
-  for (let id in users) {
-    const user = users[id]
-    const answeredQuestions = Object.keys(user.answers).length
-    const createdQuestions = user.questions.length
-    const score = answeredQuestions + createdQuestions
-    const userObject = {
+  // let usersWithScore = []
+  // for (let id in users) {
+  //   const user = users[id]
+  //   const answeredQuestions = Object.keys(user.answers).length
+  //   const createdQuestions = user.questions.length
+  //   const score = answeredQuestions + createdQuestions
+  //   const userObject = {
+  //     ...user,
+  //     answeredQuestions,
+  //     createdQuestions,
+  //     score,
+  //   }
+  //   usersWithScore.push(userObject)
+  // }
+  const usersWithScore = Object.keys(users).map((id) => {
+    const user = users[id];
+    const answeredQuestions = Object.keys(user.answers).length;
+    const createdQuestions = user.questions.length;
+    const score = answeredQuestions + createdQuestions;
+    console.log(user);
+    return {
       ...user,
       answeredQuestions,
       createdQuestions,
-      score,
-    }
-    usersWithScore.push(userObject)
-  }
+      score
+    };
+  })
   const usersSortedByScore = usersWithScore.sort(function(a, b) {
     return b.score - a.score;
   }) 
