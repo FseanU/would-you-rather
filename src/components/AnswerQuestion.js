@@ -58,6 +58,7 @@ class AnswerQuestion extends React.Component {
             </div>
           </div>
           <div className="options mt-64">
+            {/* option one */}
             <input 
               type="radio" 
               value="optionOne" 
@@ -72,7 +73,10 @@ class AnswerQuestion extends React.Component {
             >
               {optionOneText}  
             </label>
-          
+
+            <div className="line-right-black"></div>
+
+            {/* option two */}
             <input 
               type="radio" 
               value="optionTwo"

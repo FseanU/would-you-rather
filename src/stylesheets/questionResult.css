@@ -10,11 +10,11 @@
 }
 
 .question-result .line-bottom-black {
-  grid-column: 2 / 12;
+  grid-column: 1 / 13;
 }
 
 .question-result-info {
-  grid-column: 2 / 12;
+  grid-column: 1 / 13;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   align-items: end;
@@ -42,7 +42,7 @@
 }
 
 .options {
-  grid-column: 2 / 12;
+  grid-column: 1 / 13;
   display: grid;
   grid-template-columns: repeat(10, 1fr);
 }
@@ -52,6 +52,12 @@
   border: var(--main-color) 2px solid;
   padding: 8pt 8pt 16pt 8pt;
   border-radius: 10px;
+}
+
+.options .line-right-black {
+  grid-column: 5 / 6;
+  border-right: var(--grey) 1px solid;
+  margin: 24pt 0;
 }
 
 .authed-user-vote {

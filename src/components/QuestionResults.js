@@ -59,6 +59,7 @@ class QuestionResults extends React.Component {
             <p className="mt-8">{`${option1Rate} %`}</p>
             <p className="option-votes mt-8">{`(${optionOneVotes} out of ${totalVotes} ${vote})`}</p>
           </div>
+          <div className="line-right-black"></div>
           <div className="option2">
             <div className="authed-user-vote mb-8">
               <img 
