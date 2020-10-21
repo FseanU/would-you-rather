@@ -10,29 +10,38 @@ function Nav (props) {
     <nav className="nav">
       {user ? 
         (<ul>
-            <li>
-              <NavLink to='/' exact>
-                Home
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to='/new'>
-                New Question
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to='/leaderboard'>
-                Leader Board
-              </NavLink>
-            </li>
-            <li>
-              <img src={require(`../${avatar}`)} alt="Your avatar"/>
-            </li>
-            <li>
-              <NavLink to='/logout'>
-                Logout
-              </NavLink>
-            </li>
+            <div className="nav-route">
+              <li id="logo-li">
+                <NavLink id="logo" to='/' exact>
+                  WYR
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to='/' exact>
+                  Dashboard
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to='/new'>
+                  New Question
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to='/leaderboard'>
+                  Leader Board
+                </NavLink>
+              </li>
+            </div>
+            <div className="nav-user">
+              <li>
+                <img src={require(`../${avatar}`)} alt="Your avatar"/>
+              </li>
+              <li>
+                <NavLink to='/logout'>
+                  Logout
+                </NavLink>
+              </li>
+            </div>
           </ul>)
         : ''
       }

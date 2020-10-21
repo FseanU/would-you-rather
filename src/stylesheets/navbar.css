@@ -1,13 +1,26 @@
 .nav ul {
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
 }
 
-.nav li {
-  padding: 0.8rem;
+.nav-route {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-right: 2rem;
+}
+
+.nav-user {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
   padding-left: 2rem;
+}
+
+.nav li {
+  padding: 8pt 16pt 16pt 16pt;
   font-family: Nunito;
   font-weight: 400;
   font-size: 20px;
@@ -26,4 +39,22 @@
   max-width: 32px;
   border: 2px solid var(--main-color);
   border-radius: 20px;
+}
+
+#logo-li {
+  padding-left: 0;
+  padding-right: 48pt;
+}
+
+#logo {
+  color: var(--main-color);
+  font-style: italic;
+  font-weight: 500;
+  font-size: 24pt;
+  transition: all 0.5 ease-in-out;
+  -webkit-text-stroke: 1.5px var(--main-color);
+}
+#logo:hover {
+  -webkit-text-stroke: 1.5px var(--main-color);
+  color: transparent;
 }
