@@ -19,6 +19,16 @@
   padding-left: 2rem;
 }
 
+.nav-user li {
+  display: flex;
+  align-items: center;
+}
+
+.nav-user p {
+  font-size: 10pt;
+  font-weight: 300;
+}
+
 .nav li {
   padding: 8pt 16pt 16pt 16pt;
   font-family: Nunito;

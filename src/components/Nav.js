@@ -5,6 +5,7 @@ import { connect } from 'react-redux'
 function Nav (props) {
   const { user } = props;
   const avatar = user ? user.avatarURL : ''; 
+  const name = user ? user.name : '';
   
   return (
     <nav className="nav">
@@ -35,6 +36,7 @@ function Nav (props) {
             <div className="nav-user">
               <li>
                 <img src={require(`../${avatar}`)} alt="Your avatar"/>
+                <p className="pl-8">{name}</p>
               </li>
               <li>
                 <NavLink to='/logout'>
