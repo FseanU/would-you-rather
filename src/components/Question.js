@@ -32,7 +32,7 @@ class Question extends React.Component {
           </div>
         </div>
         <div className="question-card-btn mt-16">
-          <Link to={`/question/${id}`}>View Poll</Link>
+          <Link to={`/questions/${id}`}>View Poll</Link>
         </div>
       </div>
     )
