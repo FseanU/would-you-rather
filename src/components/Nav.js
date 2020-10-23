@@ -1,12 +1,14 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import { connect } from 'react-redux'
+import { withRouter } from 'react-router'
 
 function Nav (props) {
   const { user } = props;
+  const pathName = props.location.pathname;
   const avatar = user ? user.avatarURL : ''; 
   const name = user ? user.name : '';
-  
+
   return (
     <nav className="nav">
       {user ? 
@@ -19,17 +21,23 @@ function Nav (props) {
                 </NavLink>
               </li>
               <li>
-                <NavLink to='/' exact>
+                <NavLink 
+                  to='/' exact 
+                  className={pathName === '/' ? 'black' : ''}>
                   Dashboard
                 </NavLink>
               </li>
               <li>
-                <NavLink to='/new'>
+                <NavLink 
+                  to='/new'
+                  className={pathName === '/new' ? 'black' : ''}>
                   New Question
                 </NavLink>
               </li>
               <li>
-                <NavLink to='/leaderboard'>
+                <NavLink 
+                  to='/leaderboard'
+                  className={pathName === '/leaderboard' ? 'black' : ''}>
                   Leader Board
                 </NavLink>
               </li>
@@ -61,4 +69,4 @@ function mapStateToProps({authedUser, users}) {
   }
 }
 
-export default connect(mapStateToProps)(Nav)
+export default withRouter(connect(mapStateToProps)(Nav))

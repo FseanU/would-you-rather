@@ -48,7 +48,8 @@
 }
 
 .nav a {
-  color: var(--black);
+  color: var(--grey);
+  font-weight: 300;
   transition: color 0.2s ease-in-out;
 }
 
@@ -60,6 +61,11 @@
   max-width: 32px;
   border: 2px solid var(--main-color);
   border-radius: 20px;
+}
+
+.nav li .black {
+  color: var(--black);
+  font-weight: 400;
 }
 
 #logo-li {
