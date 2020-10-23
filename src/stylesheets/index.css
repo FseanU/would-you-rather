@@ -36,7 +36,7 @@ p {
   color: var(--black);
 }
 
-.container {
+.content-container {
   max-width: 1000px;
   margin: 0 auto;
   padding: 10px;
@@ -69,4 +69,18 @@ button {
 
 button:hover {
   background-color: var(--hover-color);
+}
+
+.line-bottom-white {
+  border-bottom: solid 0.06rem white;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.line-bottom-black {
+  border-bottom: solid 0.06rem var(--grey);
+}
+
+.line-bottom-main {
+  border-bottom: solid 0.06rem var(--main-color);
 }

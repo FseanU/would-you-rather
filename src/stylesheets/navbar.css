@@ -1,8 +1,19 @@
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background-color: white;
+  margin-top: -9px;
+  padding-top: 8px;
+}
+
 .nav ul {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  margin: 8pt auto;
+  width: 90vw;
 }
 
 .nav-route {
@@ -59,8 +70,8 @@
 #logo {
   color: var(--main-color);
   font-style: italic;
-  font-weight: 500;
-  font-size: 24pt;
+  font-weight: 600;
+  font-size: 32pt;
   transition: all 0.5 ease-in-out;
   -webkit-text-stroke: 1.5px var(--main-color);
 }

@@ -10,7 +10,8 @@ function Nav (props) {
   return (
     <nav className="nav">
       {user ? 
-        (<ul>
+        (<React.Fragment>
+          <ul>
             <div className="nav-route">
               <li id="logo-li">
                 <NavLink id="logo" to='/' exact>
@@ -42,9 +43,11 @@ function Nav (props) {
                 <NavLink to='/logout'>
                   Logout
                 </NavLink>
-              </li>
+              </li>            
             </div>
-          </ul>)
+          </ul>
+          {/* <div className="line-bottom-black"></div> */}
+        </React.Fragment>)
         : ''
       }
     </nav>

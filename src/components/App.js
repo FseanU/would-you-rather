@@ -21,21 +21,23 @@ class App extends React.Component {
     return (
       <Router>
         <React.Fragment>
-          <LoadingBar />
+          <LoadingBar style={{backgroundColor: '#FF7257', height: '2px' }} />
           <div className='container'>
             <Nav />
-            {this.props.authedUser ? console.log("already login")
-              : <Redirect to="/signin" />}
-            <Route path='/signin' component={SignIn} />
-            {this.props.loading === true 
-              ? null 
-              : <div>
-                  <Route path='/' exact component={Dashboard} />
-                  <Route path='/questions/:id' component={QuestionPage} />
-                  <Route path='/leaderboard' component={LeaderBoard} />
-                  <Route path='/new' component={NewQuestion} />
-                  <Route path='/logout' component={LogoutPage} />
-                </div>}
+            <div className="content-container">
+              {this.props.authedUser ? console.log("already login")
+                : <Redirect to="/signin" />}
+              <Route path='/signin' component={SignIn} />
+              {this.props.loading === true 
+                ? null 
+                : <div>
+                    <Route path='/' exact component={Dashboard} />
+                    <Route path='/questions/:id' component={QuestionPage} />
+                    <Route path='/leaderboard' component={LeaderBoard} />
+                    <Route path='/new' component={NewQuestion} />
+                    <Route path='/logout' component={LogoutPage} />
+                  </div>}
+            </div>
           </div>
         </React.Fragment>
       </Router>

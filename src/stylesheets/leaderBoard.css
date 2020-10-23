@@ -39,16 +39,6 @@
   justify-content: space-between;
 }
 
-.line-bottom-white {
-  border-bottom: solid 0.06rem white;
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-
-.line-bottom-black {
-  border-bottom: solid 0.06rem var(--grey);
-}
-
 .leaderBoard {
   font-weight: 300;
   color: var(--dark-grey);
