@@ -40,3 +40,10 @@ To run this project:
 
 - install all project dependencies with `yarn install`
 - start the development server with `yarn start`
+
+## Credit
+
+special thanks
+
+- Avatar illustration by [Micah Lanier](https://dribbble.com/micahlanier)
+- Login page illustration by [Treetop](https://thetreetopco.wordpress.com/)
