@@ -1,15 +1,17 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom'
-import { connect } from 'react-redux'
-import LoadingBar from 'react-redux-loading'
-import { handleInitialData } from '../actions/shared'
-import Dashboard from './Dashboard'
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
+import { connect } from 'react-redux';
+import LoadingBar, { loadingBarMiddleware } from 'react-redux-loading';
+import { handleInitialData } from '../actions/shared';
+import Dashboard from './Dashboard';
 import LeaderBoard from './LeaderBoard';
-import NewQuestion from './NewQuestion'
+import NewQuestion from './NewQuestion';
 import QuestionPage from './QuestionPage';
-import SignIn from './SignIn'
-import Nav from './Nav'
+import SignIn from './SignIn';
+import Nav from './Nav';
 import LogoutPage from './LogoutPage';
+import NotFound from './NotFound';
+import PrivateRoute from './PrivateRoute';
 
 class App extends React.Component {
   componentDidMount() {
@@ -17,26 +19,29 @@ class App extends React.Component {
   }
 
   render() {
-    console.log(this.props)
+    const authed = this.props.authedUser !== null
+
     return (
       <Router>
         <React.Fragment>
           <LoadingBar style={{backgroundColor: '#FF7257', height: '2px' }} />
+          
           <div className='container'>
             <Nav />
+
             <div className="content-container">
-              {this.props.authedUser ? console.log("already login")
-                : <Redirect to="/signin" />}
-              <Route path='/signin' component={SignIn} />
               {this.props.loading === true 
                 ? null 
-                : <div>
-                    <Route path='/' exact component={Dashboard} />
-                    <Route path='/questions/:id' component={QuestionPage} />
-                    <Route path='/leaderboard' component={LeaderBoard} />
-                    <Route path='/new' component={NewQuestion} />
+                : <Switch>
+                    <Route path='/signin' component={SignIn} />
                     <Route path='/logout' component={LogoutPage} />
-                  </div>}
+                    <Route path='/questions/:id' component={QuestionPage} />
+                    <PrivateRoute authed={authed} path='/leaderboard' component={LeaderBoard} />
+                    <PrivateRoute authed={authed} path='/new' component={NewQuestion} />
+                    <PrivateRoute authed={authed} exact={true} path='/' component={Dashboard} />
+                    <Route path='/404' component={NotFound} />
+                    <Redirect to='/404' />
+                  </Switch>}
             </div>
           </div>
         </React.Fragment>
@@ -45,9 +50,9 @@ class App extends React.Component {
   }
 }
 
-function mapStateToProps ({ authedUser }){
+function mapStateToProps ({ authedUser, questions }){
   return {
-    loading: authedUser === null,
+    loading: questions === null,
     authedUser,
   }
 }

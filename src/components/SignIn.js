@@ -27,8 +27,10 @@ class SignIn extends React.Component {
 
   render() {
     const { users, authedUser } = this.props
+    const { from } = this.props.location.state || { from: { pathname: '/' }}
+    
     if (authedUser) {
-      return <Redirect to='/' />
+      return <Redirect push to={from} />
     }
     return (
       <div className="sign-in-container mt-72">
