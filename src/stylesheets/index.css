@@ -9,6 +9,7 @@
 @import "questionResult.css";
 @import "answerQuestion.css";
 @import "navbar.css";
+@import "notFound.css";
 
 body {
   margin: 0;

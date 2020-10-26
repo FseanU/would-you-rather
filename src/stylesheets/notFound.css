@@ -1,0 +1,16 @@
+.not-found-container {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  justify-items: center;
+}
+
+.not-found-container img {
+  object-fit: contain;
+  max-width: 960px;
+  grid-column: 2 / 12;
+}
+
+.not-found-container h2 {
+  grid-column: 2 / 12;
+  font-weight: 400;
+}
