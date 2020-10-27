@@ -2,8 +2,6 @@ import React from 'react'
 import { Redirect, Route } from 'react-router-dom'
 
 export default function PrivateRoute ({component: Component, authed, path }) {
-  console.log(authed)
-  console.log('test')
   return (
     <Route 
       render={(props) => (

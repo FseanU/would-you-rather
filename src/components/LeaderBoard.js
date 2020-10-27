@@ -11,7 +11,6 @@ function LeaderBoard(props) {
       <div className="card-container mt-48">
         {usersSortedByScore.map((user) => {
           const avatar = user.avatarURL
-          console.log(user);
           return (
             <div className='card p-16' key={user.id}>
               <img 
