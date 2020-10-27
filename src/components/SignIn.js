@@ -5,7 +5,7 @@ import { setAuthedUser } from '../actions/authedUser'
 
 class SignIn extends React.Component {
   state = {
-    value: '',
+    value: 'sarahedo',
   }
 
   handleChange = (e) => {
@@ -18,7 +18,7 @@ class SignIn extends React.Component {
   handleSubmit = (e) => {
     const { dispatch } = this.props
     const userId = this.state.value
-    console.log("submit")
+    
     e.preventDefault()
     if (userId) {
       dispatch(setAuthedUser(userId))
