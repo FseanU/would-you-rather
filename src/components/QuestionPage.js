@@ -1,11 +1,16 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { Redirect } from 'react-router-dom'
 import AnswerQuestion from './AnswerQuestion'
 import QuestionResults from './QuestionResults'
 
 class QuestionPage extends React.Component {
   render() {
-    const { id, optionOneVotedArr, optionTwoVotedArr, authedUser } = this.props 
+    const { id, optionOneVotedArr, optionTwoVotedArr, authedUser, questionExist } = this.props 
+    
+    if (!questionExist) {
+      return <Redirect to="/404" />
+    }
 
     return (
       <div>
@@ -19,16 +24,18 @@ class QuestionPage extends React.Component {
   }
 }
 
-function mapStateToProps ({authedUser, users, questions}, props) {
+function mapStateToProps ({authedUser, questions}, props) {
   const { id } = props.match.params
-  const optionOneVotedArr = questions[id].optionOne.votes
-  const optionTwoVotedArr = questions[id].optionTwo.votes
-  
+  const questionExist = questions[id] 
+  const optionOneVotedArr = questionExist ? questions[id].optionOne.votes : ''
+  const optionTwoVotedArr = questionExist ? questions[id].optionTwo.votes : ''
+
   return {
     id,
     authedUser,
     optionOneVotedArr,
     optionTwoVotedArr,
+    questionExist,
   }
 }
 

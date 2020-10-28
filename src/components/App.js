@@ -35,7 +35,7 @@ class App extends React.Component {
                 : <Switch>
                     <Route path='/signin' component={SignIn} />
                     <Route path='/logout' component={LogoutPage} />
-                    <Route path='/questions/:id' component={QuestionPage} />
+                    <PrivateRoute authed={authed} path='/questions/:id' component={QuestionPage} />
                     <PrivateRoute authed={authed} path='/leaderboard' component={LeaderBoard} />
                     <PrivateRoute authed={authed} path='/new' component={NewQuestion} />
                     <PrivateRoute authed={authed} exact={true} path='/' component={Dashboard} />
