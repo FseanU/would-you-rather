@@ -57,8 +57,6 @@ function Nav (props) {
           }
         </ul>
       </>
-        
-      }
     </nav>
   )
 }

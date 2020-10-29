@@ -85,3 +85,15 @@ button:hover {
 .line-bottom-main {
   border-bottom: solid 0.06rem var(--main-color);
 }
+
+@media screen and (max-width: 480px) {
+  .content-container {
+    width: 100vw;
+    margin: 0 auto;
+    padding: 10px;
+  }
+
+  .container {
+    width: 100vw;
+  }
+}
