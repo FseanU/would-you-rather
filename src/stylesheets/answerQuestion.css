@@ -23,7 +23,7 @@
 
 .answer-question .option1,
 .answer-question .option2 {
-  padding: 64pt;
+  padding: 64pt 56pt;
   font-size: 24pt;
   cursor: pointer;
   font-style: italic;
