@@ -13,7 +13,6 @@ export default function questions (state={}, action) {
         [action.question.id]: action.question
       }
     case ANSWER_QUESTION :
-      console.log(state[action.qid])
       return {
         ...state,
         [action.qid]: {

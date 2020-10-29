@@ -28,9 +28,7 @@ class QuestionResults extends React.Component {
     const vote = totalVotes > 1 ? "votes" : "vote"
     const avatar = author.avatarURL
     const optionOneVotedArr = question.optionOne.votes
-    const optionTwoVotedArr = question.optionTwo.votes
     const votedOptionOne = optionOneVotedArr.includes(authedUser)
-    const votedOptionTwo = optionTwoVotedArr.includes(authedUser)
 
     return (
       <div className="question-result mt-72"> 

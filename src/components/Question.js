@@ -21,7 +21,6 @@ class Question extends React.Component {
         <div className="card-info">
           <img 
             src={require(`../${avatar}`)} 
-            // src={require('../images/avatar1.png')} 
             alt={`Avatar of ${name}`}
           /> 
           <div className="ml-8">

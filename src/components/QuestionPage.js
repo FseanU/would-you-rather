@@ -13,13 +13,13 @@ class QuestionPage extends React.Component {
     }
 
     return (
-      <div>
+      <>
         {/* 1. Show AnswerQuestion if authedUser haven't answered the question
             2. Show QuestionResult if authedUser answered the question  */}
         {optionOneVotedArr.includes(authedUser) || optionTwoVotedArr.includes(authedUser)
           ? <QuestionResults id={id} />
           : <AnswerQuestion id={id} /> }
-      </div>
+      </>
     )
   }
 }

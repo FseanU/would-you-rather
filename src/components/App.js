@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
-import LoadingBar, { loadingBarMiddleware } from 'react-redux-loading';
+import LoadingBar from 'react-redux-loading';
 import { handleInitialData } from '../actions/shared';
 import Dashboard from './Dashboard';
 import LeaderBoard from './LeaderBoard';
@@ -23,7 +23,7 @@ class App extends React.Component {
 
     return (
       <Router>
-        <React.Fragment>
+        <>
           <LoadingBar style={{backgroundColor: '#FF7257', height: '2px' }} />
           
           <div className='container'>
@@ -44,7 +44,7 @@ class App extends React.Component {
                   </Switch>}
             </div>
           </div>
-        </React.Fragment>
+        </>
       </Router>
     );
   }

@@ -19,7 +19,6 @@ class AnswerQuestion extends React.Component {
   handleSubmit = (e) => {
     e.preventDefault()
     const { answer } = this.state
-    console.log(answer)
     const { dispatch, authedUser, qid } = this.props
 
     dispatch(handleAnswerQuestion({
@@ -33,7 +32,6 @@ class AnswerQuestion extends React.Component {
     })
   }
   render() {
-    console.log(this.state.answer);
     const { question, author } = this.props
     const { answer, toQuestionResults } = this.state
     const optionOneText = question.optionOne.text

@@ -11,7 +11,7 @@ function Nav (props) {
 
   return (
     <nav className="nav">
-      <React.Fragment>
+      <>
         <ul>
           <div className="nav-route">
             <li id="logo-li">
@@ -56,7 +56,7 @@ function Nav (props) {
             : ''
           }
         </ul>
-      </React.Fragment>
+      </>
         
       }
     </nav>
