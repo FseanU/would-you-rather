@@ -73,3 +73,16 @@ textarea:focus {
   grid-column: 1 / 2;
   justify-self: center;
 }
+
+@media screen and (max-width: 480px) {
+  .form-container {
+    margin-top: 24pt;
+  }
+
+  .form-container h1,
+  .form-container p,
+  .form-container h3,
+  .form-container form {
+    grid-column: 2 / 12;
+  }
+}
