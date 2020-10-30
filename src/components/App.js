@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import LoadingBar from 'react-redux-loading';
+import { BrowserView, MobileView } from 'react-device-detect'
 import { handleInitialData } from '../actions/shared';
 import Dashboard from './Dashboard';
 import LeaderBoard from './LeaderBoard';
@@ -12,6 +13,7 @@ import Nav from './Nav';
 import LogoutPage from './LogoutPage';
 import NotFound from './NotFound';
 import PrivateRoute from './PrivateRoute';
+import Drawer from './Drawer'
 
 class App extends React.Component {
   componentDidMount() {
@@ -27,7 +29,12 @@ class App extends React.Component {
           <LoadingBar style={{backgroundColor: '#FF7257', height: '2px' }} />
           
           <div className='container'>
-            <Nav />
+            <BrowserView>
+              <Nav />
+            </BrowserView>
+            <MobileView>
+              <Drawer />
+            </MobileView>
 
             <div className="content-container">
               {this.props.loading === true 
