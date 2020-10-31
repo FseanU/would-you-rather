@@ -1,7 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { isMobile } from 'react-device-detect'
 import { makeStyles } from '@material-ui/core/styles';
-import { Tabs, Tab } from '@material-ui/core'
+import { Tabs, Tab, Typography } from '@material-ui/core'
 import Grid from '@material-ui/core/Grid'
 import Question from './Question'
 import { isQuestionVoted } from '../utils/helpers'
@@ -12,6 +13,9 @@ const useStyles = makeStyles({
   },
   buttonStyle: {
     color: "#ff7257",
+  },
+  tabTitleForMobile: {
+    fontSize: 11,
   }
 });
 
@@ -43,8 +47,33 @@ function Dashboard (props) {
           value={selectedTab} 
           onChange={handleChange} 
           TabIndicatorProps={{ className: classes.indicator }} >
-          <Tab label="Unanswered Questions" className={selectedTab === 1 ? '' : classes.buttonStyle} />
-          <Tab label="Answered Questions" className={selectedTab === 0 ? '' : classes.buttonStyle} />
+          <Tab 
+            // label="Unanswered Questions" 
+            label={ 
+              <Typography 
+                variant="body1" 
+                className={
+                  isMobile 
+                  ? classes.tabTitleForMobile
+                  : ''
+                }>
+                Unanswered Questions
+              </Typography>             
+            } 
+            className={selectedTab === 1 ? '' : classes.buttonStyle} />
+          <Tab 
+            label={
+              <Typography 
+                variant="body1" 
+                className={
+                  isMobile 
+                  ? classes.tabTitleForMobile
+                  : ''
+                }>
+                Answered Questions
+              </Typography> 
+            } 
+            className={selectedTab === 0 ? '' : classes.buttonStyle} />
         </Tabs>
       </Grid>
       <div className="mt-16 dashboard-cards">
