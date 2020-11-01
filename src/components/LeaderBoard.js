@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { isMobile } from 'react-device-detect'
 
 function LeaderBoard(props) {
   const { usersSortedByScore } = props
@@ -7,7 +8,7 @@ function LeaderBoard(props) {
   return (
     <div>
         <h1 className="mt-72 leaderBoard">Leader Board</h1>
-        <div className="line-bottom-black"></div>
+        <div className={!isMobile && "line-bottom-black"}></div>
       <div className="card-container mt-48">
         {usersSortedByScore.map((user) => {
           const avatar = user.avatarURL

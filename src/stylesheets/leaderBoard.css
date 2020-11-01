@@ -42,3 +42,20 @@
   font-weight: 300;
   color: var(--dark-grey);
 }
+
+@media screen and (max-width: 480px) {
+  .card-container {
+    justify-content: center;
+    margin: 24pt 0;
+  }
+
+  .leaderBoard {
+    text-align: center;
+    margin-top: 24pt;
+  }
+
+  .card img {
+    max-width: 300px;
+    align-self: center;
+  }
+}
