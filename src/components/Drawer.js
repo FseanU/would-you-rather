@@ -19,7 +19,11 @@ const useStyles = makeStyles({
     }
   },
   list: {
-    height: '100vh'
+    width: '100vw',
+    '& span': {
+      textAlign: 'center',
+      padding: '8pt'
+    }
   },
   test: {
     backgroundColor: 'rgba(255, 114, 87, 0.8)'
@@ -65,7 +69,7 @@ function Drawer (props) {
       <MUIDrawer 
         open={display} 
         onClose={toggleDrawer}
-        anchor= 'top'
+        anchor= 'left'
       >
         <div onClick={toggleDrawer}>
           <List className={classes.list}>
@@ -77,7 +81,9 @@ function Drawer (props) {
                     button key={text} 
                     onClick={onClick ? onClick : null}
                   >
-                    {icon && icon}
+                    <div>
+                      {icon && icon}
+                    </div>
                     <ListItemText primary={text} />
                   </ListItem>
                   <Divider />
