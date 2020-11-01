@@ -13,7 +13,7 @@ import Nav from './Nav';
 import LogoutPage from './LogoutPage';
 import NotFound from './NotFound';
 import PrivateRoute from './PrivateRoute';
-import Drawer from './Drawer'
+import NavSmall from './NavSmall'
 
 class App extends React.Component {
   componentDidMount() {
@@ -33,7 +33,7 @@ class App extends React.Component {
               <Nav />
             </BrowserView>
             <MobileView>
-              <Drawer />
+              <NavSmall />
             </MobileView>
 
             <div className="content-container">

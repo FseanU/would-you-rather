@@ -85,3 +85,29 @@
   -webkit-text-stroke: 1.5px var(--main-color);
   color: transparent;
 }
+
+/* NavSmall */
+.nav-small {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.nav-small img {
+  max-width: 35px;
+  place-self: center end;
+  margin-right: 8pt;
+  border: 2px solid var(--main-color);
+  border-radius: 22px;
+}
+
+.nav-small div {
+  place-self: center start;
+}
+
+@media screen and (max-width: 480px) {
+  #logo {
+    font-size: 28pt;
+    place-self: center;
+    z-index: 1000 !important;
+  }
+}
