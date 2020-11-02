@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { isMobile } from 'react-device-detect'
 import { withStyles } from '@material-ui/core/styles';
 import LinearProgress from '@material-ui/core/LinearProgress';
 
@@ -34,16 +35,21 @@ class QuestionResults extends React.Component {
       <div className="question-result mt-72"> 
         <div className="question-result-info">
           <h1>Results</h1>
-          <div>
-            <p className="mr-8">{`Asked by ${author.name}`}</p>
-            <img 
-              src={require(`../${avatar}`)} 
-              alt={`Avatar of ${author.name}`} />
-          </div>
+
+          {isMobile 
+            ? (<p className="mr-8">{`Asked by ${author.name}`}</p>)
+            : (<div>
+                <p className="mr-8">{`Asked by ${author.name}`}</p>
+                <img 
+                  src={require(`../${avatar}`)} 
+                  alt={`Avatar of ${author.name}`} />
+              </div>)
+          }
         </div>
         <div className="mt-8 line-bottom-black"></div>
         <h1 className="mt-48">Would you rather</h1>
         <div className="options mt-32">
+        {/* option1 */}
           <div className="option1">
             <div className="authed-user-vote">
               <img 
@@ -57,7 +63,13 @@ class QuestionResults extends React.Component {
             <p className="mt-8">{`${option1Rate} %`}</p>
             <p className="option-votes mt-8">{`(${optionOneVotes} out of ${totalVotes} ${vote})`}</p>
           </div>
-          <div className="line-right-black"></div>
+
+          {isMobile 
+            ? (<p className="or">or</p>)
+            : (<div className="line-right-black"></div>)
+          }
+
+          {/* option2 */}
           <div className="option2">
             <div className="authed-user-vote mb-8">
               <img 

@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
+import { isMobile } from 'react-device-detect'
 import { handleAnswerQuestion } from '../actions/questions'
 
 class AnswerQuestion extends React.Component {
@@ -52,7 +53,7 @@ class AnswerQuestion extends React.Component {
             /> 
             <div className="ml-16">
               <p>{author.name} asks:</p>
-              <h1>Would You Rather ...</h1>
+              <h1>Would You Rather</h1>
             </div>
           </div>
           <div className="options mt-64">
@@ -72,8 +73,11 @@ class AnswerQuestion extends React.Component {
               {optionOneText}  
             </label>
 
-            <div className="line-right-black"></div>
-
+            {isMobile 
+              ? (<p className="or">or</p>)
+              : (<div className="line-right-black"></div>)
+            }
+            
             {/* option two */}
             <input 
               type="radio" 
