@@ -58,6 +58,13 @@
   box-shadow: 3px 5px 15px rgba(0, 0, 0, 0.5);
 }
 
+/* macbook */
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi) {
+  .answer-question {
+    margin-top: 24pt;
+  }
+}
+
 @media screen and (max-width: 480px) {
   .answer-question {
     margin: 40pt 16pt;

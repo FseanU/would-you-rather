@@ -60,6 +60,18 @@ option {
   border-radius: 10px;
 }
 
+/* macbook */
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi) {
+  .sign-in-container {
+    margin-top: -8pt;
+  }
+
+  .sign-in-container img {
+    max-width: 550px;
+    grid-column: 2 / 8;
+  }
+}
+
 @media screen and (max-width: 480px) {
   .sign-in {
     grid-column: 2 / 12;

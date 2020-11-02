@@ -14,3 +14,18 @@
   grid-column: 3 / 12;
   font-weight: 400;
 }
+
+/* macbook */
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi) {
+  .not-found-container {
+    margin-top: -16pt;
+  }
+
+  .not-found-container h2 {
+    margin-top: 0;
+  }
+
+  .not-found-container img {
+    max-width: 680px;
+  }
+}
