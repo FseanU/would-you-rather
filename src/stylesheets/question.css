@@ -34,6 +34,7 @@
   font-weight: 200;
   font-size: 12pt;
   font-style: normal;
+  color: var(--grey);
 }
 
 .card-info p {
@@ -49,7 +50,16 @@
 }
 
 @media screen and (max-width: 480px) {
-  .question-card-btn a {
-    grid-column: 1 / 4;
+  .question-card {
+    padding: 16pt 8pt;
+  }
+
+  .card-info div {
+    margin-left: 4pt;
+  }
+
+  .card-info .author {
+    font-size: 12px;
+    font-weight: 300;
   }
 }
