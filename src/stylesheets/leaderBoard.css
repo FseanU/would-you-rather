@@ -31,6 +31,8 @@
 
 .card img {
   object-fit: contain;
+  max-width: 180px;
+  align-self: center;
 }
 
 .text-card {
