@@ -4,13 +4,15 @@
 }
 
 .dashboard li {
-  padding-top: 16pt;
+  padding-top: 24pt;
+  grid-column: 4 / 10;
+  justify-self: center;
 }
 
 .dashboard-cards {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  justify-content: center;
 }
 
 /* macbook */
@@ -29,5 +31,9 @@
 
   .dashboard-cards {
     margin: 0 8pt;
+  }
+
+  .dashboard li {
+    grid-column: 1 / 13;
   }
 }
