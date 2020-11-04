@@ -18,13 +18,12 @@
 
 .card-info div {
   grid-column: 2 / 4;
-  max-width: 240px;
+  max-width: 280px;
 }
 
 .card-info img {
   grid-column: 1 / 2;
   justify-self: center;
-  max-width: 120px;
 }
 
 .card-info h2 {
