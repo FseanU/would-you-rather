@@ -127,4 +127,8 @@
   .answer-question {
     margin: 16pt;
   }
+
+  .options {
+    margin-top: 16pt;
+  }
 }
