@@ -145,9 +145,14 @@
   }
 }
 
+/* iphone 6+, 7+ and 8+ */
 @media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) {
   .authed-user-vote {
     height: 24px;
     margin: 8pt;
+  }
+
+  .question-result {
+    margin: 16pt;
   }
 }
