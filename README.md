@@ -10,6 +10,8 @@ The app lets users play the “Would You Rather?” game.<br>
 A user can ask or answer a question in the form: “Would you rather [option A] or [option B] ?” <br>
 After answering a question, the user can see the poll result of the question.
 <br>
+[Try it out](https://would-you-rather--game.herokuapp.com/)
+<br>
 <br>
 
 #### Screenshots
@@ -46,4 +48,4 @@ To run this project:
 special thanks
 
 - Avatar illustration by [Micah Lanier](https://dribbble.com/micahlanier)
-- Login page illustration by [Treetop](https://thetreetopco.wordpress.com/)
+- Login page and 404 illustration by [Treetop](https://thetreetopco.wordpress.com/)
