@@ -3,6 +3,9 @@
 "Would you rather" is a game app created with React and Redux.
 <br>
 <br>
+![Would you rather cover](./src/images/overview.jpg)
+<br>
+<br>
 
 ## Overview
 
